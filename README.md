@@ -3,7 +3,7 @@
 <summary>INTRODUCTION THEORY </summary>
   
  # Digital VLSI SoC/Physical Design Overview
-   ![image alt]()
+   ![image alt](https://github.com/Vansh0917/nasscom-vsd-soc-design-program/blob/main/Screenshot%202025-01-23%20181617.png?raw=true)
   
    Key Steps in the Design Flow:
 
@@ -25,6 +25,8 @@ The overall flow transforms RTL specifications into a physically implemented SoC
 ## VLSI Concepts Overview
 ![image alt]()
  Overview of key VLSI concepts related to board diagrams, focusing on essential components and their functions in integrated circuit design.
+
+ 
 ![image alt]()
 ## Package (QFN 48)
 - **QFN**: Quad Flat No-lead package, a surface-mount IC package.
