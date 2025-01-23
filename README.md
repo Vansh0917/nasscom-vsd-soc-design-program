@@ -23,7 +23,7 @@
 8. **RTL2GDS**: Generates final GDSII layout.
 The overall flow transforms RTL specifications into a physically implemented SoC design.
 ## VLSI Concepts Overview
-![image alt]()
+![image alt](https://github.com/Vansh0917/nasscom-vsd-soc-design-program/blob/main/Screenshot%202025-01-23%20183852.png?raw=true)
 
  Overview of key VLSI concepts related to board diagrams, focusing on essential components and their functions in integrated circuit design.
 
