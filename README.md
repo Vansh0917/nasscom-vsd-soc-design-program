@@ -71,3 +71,5 @@ The overall flow transforms RTL specifications into a physically implemented SoC
 * System software helps in managing and controlling the execution of the program. 
 
 </details>
+
+# Section 1 - Inception of open-source EDA, OpenLANE and Sky130 PDK
