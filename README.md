@@ -27,12 +27,11 @@ The overall flow transforms RTL specifications into a physically implemented SoC
 
  Overview of key VLSI concepts related to board diagrams, focusing on essential components and their functions in integrated circuit design.
 
- 
-![image alt]()
-## Package (QFN 48)
+ ## Package (QFN 48)
 - **QFN**: Quad Flat No-lead package, a surface-mount IC package.
 - **Pin Count**: The "48" indicates the package has 48 pins/leads.
 - **Design Features**: QFN packages have flat, exposed metal pads on the bottom, allowing for a compact design and improved thermal performance.
+![image alt](https://github.com/Vansh0917/nasscom-vsd-soc-design-program/blob/main/Screenshot%202025-01-23%20185133.png?raw=true)
 
 ## Wire Bonds
 - **Functionality**: Thin metallic wires that electrically connect the die (chip) to the package pads.
