@@ -57,7 +57,7 @@ The overall flow transforms RTL specifications into a physically implemented SoC
 - External interfaces such as I2C, OSPI, UART, and GPIO allow communication with other devices.
 - The JTAG-UART block is crucial for programming and debugging purposes.
 
- ![image alt]( )
+ ![image alt](https://github.com/Vansh0917/nasscom-vsd-soc-design-program/blob/main/Screenshot%202025-01-23%20192215.png?raw=true )
 ## Key Concepts
 * **Compiler input:** The source code written in a high-level programming language (e.g., C)
 * **Compiler output:** Assembly language instructions
