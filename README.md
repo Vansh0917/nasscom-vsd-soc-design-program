@@ -57,4 +57,17 @@ The overall flow transforms RTL specifications into a physically implemented SoC
 - External interfaces such as I2C, OSPI, UART, and GPIO allow communication with other devices.
 - The JTAG-UART block is crucial for programming and debugging purposes.
 
+ ![image alt]( )
+## Key Concepts
+* **Compiler input:** The source code written in a high-level programming language (e.g., C)
+* **Compiler output:** Assembly language instructions
+* **Assembler output:** Machine code (binary instructions)
+* **RISC-V assembly language program:** A program written in a low-level language for the RISC-V architecture.
+* **Chip layout:** Shows the layout of components on a computer chip.
+## Overall Process
+* Compiling C code into assembly language.
+* Assembling assembly code into machine code.
+* Loading and executing the machine code on the hardware.
+* System software helps in managing and controlling the execution of the program. 
+
 </details>
