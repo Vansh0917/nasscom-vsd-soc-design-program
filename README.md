@@ -46,19 +46,15 @@ The overall flow transforms RTL specifications into a physically implemented SoC
 ## Foundry IPs and Macros
 - **Foundry IPs**: Pre-designed circuit blocks provided by semiconductor foundries, verified for functionality.
 - **Macros**: Larger, complex IP blocks that can be reused across multiple chip designs, enhancing design efficiency.
-
 ## SDRAM Chip
 - **Definition**: Synchronous Dynamic Random Access Memory (SDRAM), a type of volatile memory used in systems.
 - **Functionality**: Provides high-speed, temporary data storage necessary for processors or System-on-Chip (SoC) architectures.
-![image alt]()
-## Board Diagram Interconnections
-In a typical board diagram for an SoC design:
+![image alt](https://github.com/Vansh0917/nasscom-vsd-soc-design-program/blob/main/Screenshot%202025-01-23%20185257.png?raw=true)
+
+**In a typical board diagram for an SoC design:**
 - The processor/SoC interfaces with multiple peripherals.
 - Memory components like SDRAM are connected for data storage.
 - External interfaces such as I2C, OSPI, UART, and GPIO allow communication with other devices.
 - The JTAG-UART block is crucial for programming and debugging purposes.
-
-
-
 
 </details>
