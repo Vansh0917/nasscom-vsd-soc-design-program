@@ -24,6 +24,7 @@
 The overall flow transforms RTL specifications into a physically implemented SoC design.
 ## VLSI Concepts Overview
 ![image alt]()
+
  Overview of key VLSI concepts related to board diagrams, focusing on essential components and their functions in integrated circuit design.
 
  
