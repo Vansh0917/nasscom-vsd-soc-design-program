@@ -39,11 +39,10 @@ The overall flow transforms RTL specifications into a physically implemented SoC
 ## Pads
 - **Role**: Metal contact points on the die that connect with wire bonds.
 - **Purpose**: Facilitate electrical routing and interconnections among various components on the chip.
-
 ## Core and Die
 - **Core**: The central processing unit (CPU) of the chip where primary logic and functionality reside.
 - **Die**: The physical semiconductor material that houses the core, transistors, and other necessary circuitry.
-![image alt]()
+![image alt](https://github.com/Vansh0917/nasscom-vsd-soc-design-program/blob/main/Screenshot%202025-01-23%20185234.png?raw=true)
 ## Foundry IPs and Macros
 - **Foundry IPs**: Pre-designed circuit blocks provided by semiconductor foundries, verified for functionality.
 - **Macros**: Larger, complex IP blocks that can be reused across multiple chip designs, enhancing design efficiency.
