@@ -110,5 +110,41 @@ Open-source digital ASIC design is an innovative field that leverages community-
 - **Collaboration**: Enables a community-driven approach to solving complex problems.
 - **Cost Efficiency**: Reduces barriers to silicon prototyping by utilizing open-source resources and foundry partnerships.
 
----
+# Simplified RTL to GDSII Flow
+![image alt] ()
+
+### Overview of the Design Flow
+This flow demonstrates the step-by-step process of converting an RTL design into a GDSII file for fabrication. Each stage plays a crucial role in ensuring the design meets its functional, timing, and physical requirements.
+
+## Flow Stages
+
+1. **Synthesis**  
+   Converts the RTL (Register Transfer Level) description into a gate-level netlist, optimizing for area, speed, and power.
+
+2. **Floor/Power Planning**  
+   Defines the layout structure of the chip, including regions for different modules and a power distribution network.
+
+3. **Placement**  
+   Places standard cells from the synthesized netlist into the defined floorplan.
+
+4. **Clock Tree Synthesis (CTS)**  
+   Builds a balanced clock tree to minimize clock skew and ensure proper timing across the design.
+
+5. **Routing**  
+   Connects all placed cells based on the netlist using metal layers while adhering to design rules.
+
+6. **Sign-Off**  
+   Final stage, where the design is validated against specifications, including checks for timing, DRC (Design Rule Check), and LVS (Layout Versus Schematic).
+
+
+### Tools for Each Stage
+
+- **Synthesis**: Yosys  
+- **Floor/Power Planning & Placement**: OpenROAD/OpenLANE  
+- **CTS**: TritonCTS (part of OpenROAD)  
+- **Routing**: FastRoute, detailed routing with OpenROAD  
+- **Sign-Off**: Magic (DRC & LVS)
+
+
+
 
