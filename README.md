@@ -111,7 +111,7 @@ Open-source digital ASIC design is an innovative field that leverages community-
 - **Cost Efficiency**: Reduces barriers to silicon prototyping by utilizing open-source resources and foundry partnerships.
 
 # Simplified RTL to GDSII Flow
-![image alt] ()
+![image alt](https://github.com/Vansh0917/nasscom-vsd-soc-design-program/blob/main/Screenshot%202025-01-23%20214049.png?raw=true)
 
 ### Overview of the Design Flow
 This flow demonstrates the step-by-step process of converting an RTL design into a GDSII file for fabrication. Each stage plays a crucial role in ensuring the design meets its functional, timing, and physical requirements.
