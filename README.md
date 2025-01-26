@@ -79,7 +79,6 @@ The overall flow transforms RTL specifications into a physically implemented SoC
 
 An **Application-Specific Integrated Circuit (ASIC)** is a type of integrated circuit customized for a particular use rather than being designed for general-purpose use. ASICs are widely used in industries such as communications, automotive, healthcare, and consumer electronics to provide optimized performance and power efficiency for specific applications.
 
----
 
 ## Open Source Digital ASIC Design
 ![image alt](https://github.com/Vansh0917/nasscom-vsd-soc-design-program/blob/main/Screenshot%202025-01-23%20214026.png?raw=true)
