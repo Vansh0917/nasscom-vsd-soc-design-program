@@ -82,7 +82,7 @@ An **Application-Specific Integrated Circuit (ASIC)** is a type of integrated ci
 ---
 
 ## Open Source Digital ASIC Design
-
+![image alt](https://github.com/Vansh0917/nasscom-vsd-soc-design-program/blob/main/Screenshot%202025-01-23%20214026.png?raw=true)
 Open-source digital ASIC design is an innovative field that leverages community-driven tools and resources to design and fabricate ASICs at lower costs. This ecosystem fosters innovation, collaboration, and learning by providing access to open-source tools, reusable designs, and publicly available process design kits (PDKs).
 
 ### Key Components of Open-Source ASIC Design
