@@ -161,7 +161,7 @@ OpenLane is an open-source ASIC design flow built to generate GDSII layout files
 
 Below is a summarized OpenLane flow representation:
 
-![image alt]()
+![image alt](https://github.com/Vansh0917/nasscom-vsd-soc-design-program/blob/main/Screenshot%202025-01-24%20195352.png?raw=true)
 
 ### Tools Used in OpenLane
 
@@ -197,6 +197,6 @@ Below is a summarized OpenLane flow representation:
 
 ### Running OpenLane in Interactive Mode
 
-OpenLane can be executed in interactive mode using the `-interactive` option:
+OpenLane can be executed in interactive mode using the `-interactive` -option:
 ```sh
 ./flow.tcl -interactive
