@@ -144,6 +144,59 @@ This flow demonstrates the step-by-step process of converting an RTL design into
 - **Routing**: FastRoute, detailed routing with OpenROAD  
 - **Sign-Off**: Magic (DRC & LVS)
 
+## OpenLane ASIC Flow
 
+OpenLane is an open-source ASIC design flow built to generate GDSII layout files from RTL code with minimal human intervention. It integrates multiple open-source tools to provide a complete RTL-to-GDSII flow, ensuring seamless digital design automation.
 
+### Objectives
+- Provide a fully automated, open-source RTL-to-GDSII flow.
+- Ensure a reproducible and customizable flow for ASIC design.
+- Leverage open-source tools to enable silicon design accessibility.
 
+### Inputs and Outputs
+- **Inputs:** RTL files, SDC file, and PDK files.
+- **Outputs:** GDSII/LEF file.
+
+### OpenLane Flow Overview
+
+Below is a summarized OpenLane flow representation:
+
+![image alt]()
+
+### Tools Used in OpenLane
+
+| Stage | Tool(s) Used |
+|--------|-------------|
+| **RTL Synthesis, Technology Mapping, and Formal Verification** | Yosys + ABC |
+| **Static Timing Analysis** | OpenSTA |
+| **Floor Planning** | init_fp, ioPlacer, pdn, tapcell |
+| **Placement** | RePLace (Global), OpenDP (Detailed) |
+| **Clock Tree Synthesis** | TritonCTS |
+| **Fill Insertion** | OpenDP/filler_placement |
+| **Routing** | FastRoute (Global), TritonRoute (Detailed) |
+| **SPEF Extraction** | OpenRCX |
+| **GDSII Streaming** | Magic, KLayout |
+| **DRC Checks** | Magic, KLayout |
+| **LVS Check** | Netgen |
+| **Antenna Checks** | Magic |
+| **Circuit Validity Check** | CVC |
+
+### Logic Synthesis and Optimization
+- **Yosys** converts the HDL to a gate-level netlist using generic components.
+- **ABC** maps generic components to the standard cell library of the PDK.
+- **Synthesis Exploration** allows different synthesis strategies optimizing for either area or timing.
+
+### Logic Equivalency Checking (LEC)
+- Compares the gate-level netlist from synthesis with the optimized netlist after place and route.
+
+### Antenna Rules Violation
+- **Problem:** Long wire segments act as antennas, accumulating charge and potentially damaging transistor gates.
+- **Solutions:**
+  - **Bridging** techniques to reduce charge accumulation.
+  - **Antenna diode insertion** to safely leak away excess charge.
+
+### Running OpenLane in Interactive Mode
+
+OpenLane can be executed in interactive mode using the `-interactive` option:
+```sh
+./flow.tcl -interactive
