@@ -314,6 +314,10 @@ By performing these steps, OpenLane helps in achieving an optimized balance betw
 
 **Flop Ratio Calculation:**
 
+Total number of D flip-flop in the design = 1613
+
+Total number of cells in the design = 14876
+
 Flop Ratio = 1613 / 14876 = **0.1084**
 
 **DFF Percentage Calculation:**
