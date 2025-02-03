@@ -324,5 +324,39 @@ Flop Ratio = 1613 / 14876 = **0.1084**
 
 Percentage of DFFs = 0.1084 × 100  = **10.84%**
 
+### Floor Planning Process
+
+After synthesis, we initiate floor planning using:
+
+`run_floorplan`
+![Screenshot 2025-02-01 002158](https://github.com/user-attachments/assets/406b40f3-e0a9-4e28-8a2f-16ecb5bd8555)
+
+![Screenshot 2025-02-01 001954](https://github.com/user-attachments/assets/7619fa48-60cb-4586-8b03-51af557e2a1a)
+
+### Calculate the die area in microns from the values in floorplan def
+**Viewing the Floorplan Definition**
+To check the contents of the floorplan definition file, i have  used:
+
+```sh
+cd /Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/31-01_18-44/results/floorplan/
+```
+![Screenshot 2025-02-01 002609](https://github.com/user-attachments/assets/d7672718-5804-4263-a4ce-3d4da66b60ea)
+
+## Given Data:
+ **1000 Unit Distance:** 1 Micron
+ 
+ **Die Width in Unit Distance:** `660685 - 0 = 660685`
+ 
+ **Die Height in Unit Distance:** `671405 - 0 = 671405`
+> ## Die Area Calculation in Microns
+>
+> ** Conversion to Microns:**
+> - **Die Width:** 660685 ÷ 1000 = `660.685 µm`
+> - **Die Height:** 671405 ÷ 1000 = `671.405 µm`
+>
+> **Total Die Area:** **443,587.21 µm²**
+
+
+
 
 
