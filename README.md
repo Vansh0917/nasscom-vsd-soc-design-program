@@ -342,7 +342,7 @@ cd /Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/31-0
 ```
 ![Screenshot 2025-02-01 002609](https://github.com/user-attachments/assets/d7672718-5804-4263-a4ce-3d4da66b60ea)
 
-## Given Data:
+### Given Data:
  **1000 Unit Distance:** 1 Micron
  
  **Die Width in Unit Distance:** `660685 - 0 = 660685`
@@ -355,6 +355,48 @@ cd /Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/31-0
 > - **Die Height:** 671405 ÷ 1000 = `671.405 µm`
 >
 > **Total Die Area:** **443,587.21 µm²**
+### Visualizing the floor plan using Magic:
+```
+# Change directory to path containing generated floorplan DEF
+cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/17-03_12-06/results/floorplan/
+
+# Command to load the floorplan DEF in Magic tool
+magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.floorplan.def &
+```
+![Screenshot 2025-02-01 003311](https://github.com/user-attachments/assets/d64b89dc-8e3d-4327-8ab1-f3cc33215df3)
+**Zoomed View of the Die**
+
+To zoom into a specific section of the die, follow these steps:
+
+1. Move the cursor over the section you want to zoom in on.
+2. Press the `s` key on your keyboard to select the section.
+3. Press `z` to zoom in.
+4. Press `Shift + Z` to zoom out if needed.
+
+**Equidistant Placement of Ports**
+![Screenshot 2025-02-01 004043](https://github.com/user-attachments/assets/bb7acb40-84d9-4821-98b4-5cea1c5017c4)
+ ports are placed at equal distances in the floorplan.
+
+
+**Run the following command to start the placement:**
+
+   ```
+   run_placement
+   ```
+![Screenshot 2025-02-02 204438](https://github.com/user-attachments/assets/e97fc64c-afec-4cfc-9072-222b51206a96)
+![Screenshot 2025-02-02 204459](https://github.com/user-attachments/assets/80d47dc2-cf17-4508-a8e3-060e1822d4e2)
+  placement results are  generated in result  files
+
+**# Command** For Importing Placement DEF into Magic Tool:
+```
+  magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.placement.def & 
+```
+![Screenshot 2025-02-01 004538](https://github.com/user-attachments/assets/0c7c4543-4e60-4004-86bc-ea86b8aeb1da)
+
+`**Standard** cells are arranged within standard cell rows`
+
+![Screenshot 2025-02-01 004722](https://github.com/user-attachments/assets/395d1396-3805-452a-8d4e-09ac6c1e1cc1)
+
 
 
 
