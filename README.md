@@ -195,8 +195,130 @@ Below is a summarized OpenLane flow representation:
   - **Bridging** techniques to reduce charge accumulation.
   - **Antenna diode insertion** to safely leak away excess charge.
 
-### Running OpenLane in Interactive Mode
 
-OpenLane can be executed in interactive mode using the `-interactive` -option:
+### Tasks:-
+
+- Run 'picorv32a' design synthesis using OpenLANE flow and generate necessary outputs.
+- Calculate the flop ratio.
+
+#### 📂 Change Directory to OpenLANE Flow Directory
+![Screenshot 2025-01-25 120324](https://github.com/user-attachments/assets/233211c6-d6be-44f6-a213-3190c5f19b9a)
+
 ```sh
-./flow.tcl -interactive
+cd Desktop/work/tools/openlane_working_dir/openlane
+cd Desktop/
+cd work/
+cd tools/
+cd openlane_working_dir/
+cd openlane/
+```
+
+## PDKs Folder Structure
+
+The `pdks` directory contains various libraries and configurations for Sky130A.
+
+### `libs.ref` and `libs.tech` Directories
+
+These directories contain reference libraries and EDA tool-specific configurations:
+
+```
+cd ~/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd
+ls -ltr
+```
+
+![Screenshot 2025-01-25 122853](https://github.com/user-attachments/assets/b2f3bbd3-a5ee-4716-897a-fc4aaee5e3aa)
+
+```
+cd ~/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech
+ls -ltr
+```
+
+![Screenshot 2025-01-25 122548](https://github.com/user-attachments/assets/3915dbd8-95cd-4f1d-b476-f43053ba8b57)
+
+### Run 'picorv32a' design synthesis using OpenLANE flow and generate necessary outputs
+
+```markdown 
+## OpenLANE Interactive Mode Setup
+
+Follow these steps to run OpenLANE in interactive mode within the Docker container.
+
+Steps: 
+```
+1. **Run the Docker container**:
+   Since the long command has been aliased to `docker`, invoke the OpenLANE flow Docker sub-system with:
+
+   ```bash
+   docker
+   ```
+
+2. **Check the current directory**:
+   Navigate to the directory where OpenLANE is located. Use the following command to check your current directory:
+
+   ```bash
+   pwd
+   ```
+![Screenshot 2025-01-25 123859](https://github.com/user-attachments/assets/05ae20ba-b5cf-4c34-b384-d6c6e559806c)
+
+3. **Launch OpenLANE in interactive mode**:
+   To enter interactive mode, use the following command:
+
+   ```bash
+   ./flow.tcl -interactive
+   ```
+![Screenshot 2025-01-25 123910](https://github.com/user-attachments/assets/fe974d85-34e6-4593-9412-ff368124bd16)
+   
+ now running OpenLANE in interactive mode within the Docker container.
+
+
+### Setting Up OpenLANE for `picorv32a`
+
+
+### 1. Load OpenLANE Package  
+Ensure OpenLANE is initialized with the required package:
+```
+package require openlane 0.9
+```
+![Screenshot 2025-02-01 001445](https://github.com/user-attachments/assets/67452185-ab81-4fc5-a169-cc6ebca14553)
+
+### 2. Prepare the Design  
+Set up the necessary files and directories for the `picorv32a` design:
+
+```
+prep -design picorv32a
+```
+This command initializes the workspace, making it ready for the OpenLANE flow.
+![Screenshot 2025-01-25 133208](https://github.com/user-attachments/assets/a530ff6d-222b-40d7-aff8-ed70a82c21e2)
+![Screenshot 2025-01-25 133156](https://github.com/user-attachments/assets/d7c98f02-ec6d-4b1b-963a-cfa3a33bf55f)
+
+### In OpenLane, synthesis is executed using the `run_synthesis` command. This process consists of the following key steps:
+
+**Logic Synthesis**
+- Transforms RTL code (Verilog) into a gate-level netlist.
+- Optimizes logic for area and performance.
+
+**Static Timing Analysis (STA)**
+- Verifies timing constraints and propagation delays.
+- Ensures the design meets clocking requirements.
+
+By performing these steps, OpenLane helps in achieving an optimized balance between **performance,area  and power efficiency**. 
+
+*Screenshot is attached below.*
+
+![Screenshot 2025-01-25 151244](https://github.com/user-attachments/assets/a14bf392-c738-4b04-a80b-7c94d3dc6f6f)
+
+### --Flop Ratio and DFF Percentage Calculation
+ It is the ratio of total number of D flip-flops to the total number of cells in a design.
+ 
+![Screenshot 2025-02-01 001819](https://github.com/user-attachments/assets/ed051b0e-b6be-42b8-9e47-9e2d5a93b4c6)
+![Screenshot 2025-02-01 001754](https://github.com/user-attachments/assets/b11bfb53-853d-4e7a-80a4-73ab95361528)
+
+**Flop Ratio Calculation:**
+
+Flop Ratio = 1613 / 14876 = **0.1084**
+
+**DFF Percentage Calculation:**
+
+Percentage of DFFs = 0.1084 × 100  = **10.84%**
+
+
+
