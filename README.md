@@ -323,7 +323,7 @@ Flop Ratio = 1613 / 14876 = **0.1084**
 **DFF Percentage Calculation:**
 
 Percentage of DFFs = 0.1084 × 100  = **10.84%**
-
+# Section 2 - Good floorplan vs bad floorplan and introduction to library cells 
 ### Floor Planning Process
 
 After synthesis, we initiate floor planning using:
