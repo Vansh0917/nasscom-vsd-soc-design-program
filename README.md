@@ -399,7 +399,47 @@ To zoom into a specific section of the die, follow these steps:
 
 # Section 3 - Design library cell using Magic Layout and ngspice characterization
 
+### Cloning and Setting Up Custom Inverter Standard Cell Design in OpenLane
 
+This guide will walk you through the process of cloning the `vsdstdcelldesign` repository and setting up Magic technology files in the OpenLane directory.
 
+> ### Steps to Clone the Repository and Setup Magic Tech Files
 
+**Change to the OpenLane directory**
 
+Navigate to the `openlane` directory on your machine:
+```
+cd Desktop/work/tools/openlane_working_dir/openlane
+```
+**Clone the Custom Standard Inverter Repository**
+
+Clone the vsdstdcelldesign repository from GitHub:
+```
+git clone https://github.com/nickson-jose/vsdstdcelldesign
+```
+**Verify the Cloning**
+
+After cloning the repository, you can verify that it was successfully cloned by listing the contents of the OpenLane directory:
+
+```
+ls -ltr
+```
+**Copy Magic Technology File**
+
+To avoid specifying the full path of the tech file every time you use Magic, you need to copy the `sky130A.tech` file from the PDKs directory to the `vsdstdcelldesign` directory:
+
+1.Navigate to the directory containing the Magic tech file:
+
+```
+cd /Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic
+```
+2.Copy the sky130A.tech file to the vsdstdcelldesign directory:
+```
+cp sky130A.tech /Home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/vsdstdcelldesign
+```
+**Verify Final Setup and Open Layout**
+
+Now that everything is set up, you can open the custom inverter layout in Magic without specifying the full address of the tech file. Use the following command to view the layout:
+```
+magic -T sky130A.tech sky130_inv.mag &
+```
