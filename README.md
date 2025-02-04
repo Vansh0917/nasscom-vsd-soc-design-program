@@ -397,6 +397,7 @@ To zoom into a specific section of the die, follow these steps:
 
 ![Screenshot 2025-02-01 004722](https://github.com/user-attachments/assets/395d1396-3805-452a-8d4e-09ac6c1e1cc1)
 
+# Section 3 - Design library cell using Magic Layout and ngspice characterization
 
 
 
