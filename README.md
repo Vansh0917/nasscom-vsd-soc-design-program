@@ -405,41 +405,137 @@ This guide will walk you through the process of cloning the `vsdstdcelldesign` r
 
 > ### Steps to Clone the Repository and Setup Magic Tech Files
 
-**Change to the OpenLane directory**
-
-Navigate to the `openlane` directory on your machine:
 ```
+# 1. Navigate to OpenLane
 cd Desktop/work/tools/openlane_working_dir/openlane
-```
-**Clone the Custom Standard Inverter Repository**
 
-Clone the vsdstdcelldesign repository from GitHub:
-```
+# 2. Clone repository
 git clone https://github.com/nickson-jose/vsdstdcelldesign
-```
-**Verify the Cloning**
 
-After cloning the repository, you can verify that it was successfully cloned by listing the contents of the OpenLane directory:
-
-```
+# 3. Verify cloning
 ls -ltr
-```
-**Copy Magic Technology File**
 
-To avoid specifying the full path of the tech file every time you use Magic, you need to copy the `sky130A.tech` file from the PDKs directory to the `vsdstdcelldesign` directory:
-
-1.Navigate to the directory containing the Magic tech file:
-
-```
+# 4. Navigate to tech file location
 cd /Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic
-```
-2.Copy the sky130A.tech file to the vsdstdcelldesign directory:
-```
-cp sky130A.tech /Home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/vsdstdcelldesign
-```
-**Verify Final Setup and Open Layout**
 
-Now that everything is set up, you can open the custom inverter layout in Magic without specifying the full address of the tech file. Use the following command to view the layout:
+# 5. Copy tech file
+cp sky130A.tech /Home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/vsdstdcelldesign
+
 ```
-magic -T sky130A.tech sky130_inv.mag &
+![Screenshot 2025-02-02 191723](https://github.com/user-attachments/assets/446ad8cd-639f-489c-bdf3-9e364ae014a8)
+
+![Screenshot 2025-02-02 202136](https://github.com/user-attachments/assets/9e5130ec-2e14-4738-8e10-913dddc7b051)
+
+
+ **Command to open custom inverter layout in magic**
+ 
+`magic -T sky130A.tech sky130_inv.mag &`
+
+![Screenshot 2025-02-02 202834](https://github.com/user-attachments/assets/8363297f-d3db-4aca-b573-9fbd1976ac0d)
+### Verifying the different layers & connection of the inverter:
+To know about a layer, place your cursor on it and press `s` from your keyboard, which will select the layer/cell, now type `what` in `tkcon` window of magic, it will give the name of the layer
+
+Input A (polycont) is Identified 
+
+![Screenshot 2025-02-02 203721](https://github.com/user-attachments/assets/8c081b57-cd62-463c-a61e-0b2e41169398)
+
+Output Y connectivity to PMOS and NMOS drain verified
+
+![Screenshot 2025-02-02 205545](https://github.com/user-attachments/assets/037d2242-444b-4ede-a9ab-f78ce0ee954e)
+
+### Fixing DRC Errors in Magic VLSI
+
+ **Finding & Fixing Errors** 
+
+`drc find    # Find next error`
+
+`drc why     # Highlight errors`
+
+`drc count   # Count total errors`
+
+`drc clear   # Clear DRC highlights`
+
+`drc check   # Re-run DRC check`
+
 ```
+##Check tkcon for error details
+## Adjust layout (spacing, width, overlaps) as needed
+## Run drc check until no errors remain
+```
+**DRC Error is being highlighted in below screnshots**
+![Screenshot 2025-02-02 210019](https://github.com/user-attachments/assets/93adabb6-66ae-46bf-a46f-e2b5a6b97268)
+![Screenshot 2025-02-02 210214](https://github.com/user-attachments/assets/5be3b577-084e-4c80-a6a1-502b0322ad0a)
+
+## SPICE Extraction of Inverter
+
+**Checking Current Directory**
+
+*Before extracting, check which directory your `tkcon` window is opened in:*
+```tcl
+pwd
+```
+
+**Extracting Layout**
+
+*Run the following command in the `tkcon` window to extract all necessary files:*
+```tcl
+extract all
+```
+This will generate a `.ext` file in the same directory.
+
+ **Verifying Extraction**
+ 
+*Check if the `.ext` file has been created:*
+```sh
+ls *.ext
+```
+
+**Generating SPICE File**
+
+*Run the following commands to convert the extracted file into a SPICE netlist:*
+```tcl
+ext2spice cthresh 0 rthresh 0
+ext2spice
+```
+
+**Viewing the SPICE File**
+
+*Use the following command to open the generated SPICE file:*
+```sh
+less sky130_inv.spice
+```
+
+ **Measuring Grid Box Size in Magic**
+ 
+*To measure the unit grid box size in Magic, select a grid box and run:*
+```tckon
+box
+```
+This will output the size of the selected grid box.
+
+**Editing the SPICE File**
+
+Edit the `.spice` file in a text editor as needed.
+
+**Installing NGSPICE**
+
+Install the `ngspice` simulator using:
+```
+sudo apt install ngspice
+**Note:** The password is `vsdiat` .
+```
+
+ **Running the SPICE Simulation**
+ 
+To simulate the inverter:
+```s
+ngspice sky130_inv.spice
+```
+
+ **Plotting Output**
+ 
+To plot the output waveform:
+```
+plot y vs time a
+```
+This will generate the output waveform based on the simulation results.
