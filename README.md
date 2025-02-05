@@ -586,6 +586,6 @@ This document provides the complete set of commands and instructions for Day 4 o
    # Change directory to the custom cell design folder
    cd Desktop/work/tools/openlane_working_dir/openlane/vsdstdcelldesign
 
-   # Open the custom inverter layout with Magic
-   -T sky130A.tech sky130_inv.mag &
+   # Open the custom inverter layout with
+    Magic -T sky130A.tech sky130_inv.mag &
 ```
