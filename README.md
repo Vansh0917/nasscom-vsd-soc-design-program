@@ -481,6 +481,8 @@ pwd
 ```tcl
 extract all
 ```
+![Screenshot 2025-02-02 210808](https://github.com/user-attachments/assets/26e325df-8d87-4d3c-8926-982af729635f)
+
 This will generate a `.ext` file in the same directory.
 
  **Verifying Extraction**
@@ -497,13 +499,19 @@ ls *.ext
 ext2spice cthresh 0 rthresh 0
 ext2spice
 ```
+![Screenshot 2025-02-02 211205](https://github.com/user-attachments/assets/8d174683-ea6f-40ae-8e2c-9b02d9ec93b0)
+
+![Screenshot 2025-02-02 211236](https://github.com/user-attachments/assets/1348efd6-32a7-4790-8a63-ed4b7528c9a9)
+
 
 **Viewing the SPICE File**
 
 *Use the following command to open the generated SPICE file:*
-```sh
+```
 less sky130_inv.spice
 ```
+![Screenshot 2025-02-02 211716](https://github.com/user-attachments/assets/6e7b3fbe-3475-4505-aec3-9f67db33fe33)
+
 
  **Measuring Grid Box Size in Magic**
  
@@ -513,9 +521,12 @@ box
 ```
 This will output the size of the selected grid box.
 
+![Screenshot 2025-02-02 213357](https://github.com/user-attachments/assets/8db0b914-d436-4a15-8f4d-f11c9891eee7)
+
 **Editing the SPICE File**
 
-Edit the `.spice` file in a text editor as needed.
+Edit the `.spice` file in a text editor as needed
+by commnad `gedit sky130_inv.spice`
 
 **Installing NGSPICE**
 
@@ -524,6 +535,9 @@ Install the `ngspice` simulator using:
 sudo apt install ngspice
 **Note:** The password is `vsdiat` .
 ```
+![image](https://github.com/user-attachments/assets/cb225df5-820a-44a6-a575-fce19eee4530)
+
+![Screenshot 2025-02-03 115235](https://github.com/user-attachments/assets/48729089-cf57-4c8d-8ef8-995406828d97)
 
  **Running the SPICE Simulation**
  
@@ -531,6 +545,7 @@ To simulate the inverter:
 ```s
 ngspice sky130_inv.spice
 ```
+![Screenshot 2025-02-03 172628](https://github.com/user-attachments/assets/82832048-b813-4bbc-b77b-fd9efe1bfafc)
 
  **Plotting Output**
  
@@ -539,3 +554,10 @@ To plot the output waveform:
 plot y vs time a
 ```
 This will generate the output waveform based on the simulation results.
+
+![Screenshot 2025-02-03 172641](https://github.com/user-attachments/assets/58e32eaf-b00b-4394-bbf6-983f043b2305)
+
+ **TASK -**
+ 
+        *Characterization of the plot::*
+
