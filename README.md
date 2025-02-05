@@ -561,3 +561,31 @@ This will generate the output waveform based on the simulation results.
  
         *Characterization of the plot::*
 
+# Day 4: Pre-Layout Timing Analysis and the Importance of a Good Clock Tree
+
+This document provides the complete set of commands and instructions for Day 4 of the Digital VLSI SoC Design and Planning Workshop. It covers:
+
+1. **Integration of a Customized Inverter Cell Design**
+2. **Timing Analysis Using Ideal Clocks with OpenSTA**
+3. **Clock Tree Synthesis (CTS) Using TritonCTS**
+
+---
+
+## 1. Integration of Customized Inverter Cell Design
+
+### A. Verify Layout Conditions in Magic
+
+- **Condition 1:** Ports must be placed at intersections of vertical and horizontal tracks.  
+- **Condition 2:** The width and height of the Place & Route (P&R) region must be multiples of the grid cell dimensions.
+
+#### Steps:
+
+1. **Change Directory and Open Layout in Magic:**
+
+   ```bash
+   # Change directory to the custom cell design folder
+   cd Desktop/work/tools/openlane_working_dir/openlane/vsdstdcelldesign
+
+   # Open the custom inverter layout with Magic
+   -T sky130A.tech sky130_inv.mag &
+```
