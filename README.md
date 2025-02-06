@@ -542,7 +542,7 @@ sudo apt install ngspice
  **Running the SPICE Simulation**
  
 To simulate the inverter:
-```s
+```
 ngspice sky130_inv.spice
 ```
 ![Screenshot 2025-02-03 172628](https://github.com/user-attachments/assets/82832048-b813-4bbc-b77b-fd9efe1bfafc)
@@ -557,10 +557,26 @@ This will generate the output waveform based on the simulation results.
 
 ![Screenshot 2025-02-03 172641](https://github.com/user-attachments/assets/58e32eaf-b00b-4394-bbf6-983f043b2305)
 
- **TASK -**
+ **TASK -** 
  
-        *Characterization of the plot::*
+Characterization of the plot:
 
+     Rise transition time calculation = Time taken for output to rise to 80%−Time taken for output to rise to 20%
+                                       20% of the Output = 660mV
+                                       80% of the Output = 2.64V
+20% of the Output (screenshot )
+![Screenshot 2025-02-03 173306](https://github.com/user-attachments/assets/8d447de0-74e4-4724-bb4c-2205fe5319ad)
+
+80% of the Output (screenshot)
+![Screenshot 2025-02-03 174841](https://github.com/user-attachments/assets/a9444188-e4ef-4de3-b9cc-c2008a6532f0)
+
+![Screenshot 2025-02-03 173522](https://github.com/user-attachments/assets/76bc6249-92e1-4e25-9447-841cec780285)
+
+**Rise time** = 2.24675e-9 s - 2.18242e-9 s
+
+          =  6.433e-12 s  =  6.433ps
+          
+      
 # Day 4: Pre-Layout Timing Analysis and the Importance of a Good Clock Tree
 
 This document provides the complete set of commands and instructions for Day 4 of the Digital VLSI SoC Design and Planning Workshop. It covers:
@@ -582,7 +598,7 @@ This document provides the complete set of commands and instructions for Day 4 o
 
 1. **Change Directory and Open Layout in Magic:**
 
-   ```bash
+   ```
    # Change directory to the custom cell design folder
    cd Desktop/work/tools/openlane_working_dir/openlane/vsdstdcelldesign
 
