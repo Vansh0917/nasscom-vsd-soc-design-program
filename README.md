@@ -561,8 +561,10 @@ This will generate the output waveform based on the simulation results.
  
 Characterization of the plot:
 
-     Rise transition time calculation = Time taken for output to rise to 80%−Time taken for output to rise to 20%
+**Rise transition time**  = Time taken for output to rise to 80%−Time taken for output to rise to 20%
+
                                        20% of the Output = 660mV
+                                       
                                        80% of the Output = 2.64V
 20% of the Output (screenshot )
 ![Screenshot 2025-02-03 173306](https://github.com/user-attachments/assets/8d447de0-74e4-4724-bb4c-2205fe5319ad)
@@ -570,12 +572,35 @@ Characterization of the plot:
 80% of the Output (screenshot)
 ![Screenshot 2025-02-03 174841](https://github.com/user-attachments/assets/a9444188-e4ef-4de3-b9cc-c2008a6532f0)
 
+**NGSPICE Output (screenshot):**  
 ![Screenshot 2025-02-03 173522](https://github.com/user-attachments/assets/76bc6249-92e1-4e25-9447-841cec780285)
 
-**Rise time** = 2.24675e-9 s - 2.18242e-9 s
+Rise time = 2.24675e-9 s - 2.18242e-9 s
 
-          =  6.433e-12 s  =  6.433ps
-          
+Rise time = **6.433 ps**
+
+**Fall Transition Time **: It  time is defined as the time taken for the output to fall from 80% to 20% of its final value. 
+
+                                  80% of output = 2.64 V
+                                  
+                                  20% of output = 660 mV (0.66 V)
+                                  
+
+20% of the Output (screenshot )    
+![Screenshot 2025-02-03 174956](https://github.com/user-attachments/assets/b0c2da4c-ee60-4630-bd48-6757d2fd610f)
+
+80% of the Output (screenshot)
+![Screenshot 2025-02-03 174841](https://github.com/user-attachments/assets/0be7cc4e-561e-4a78-8ab0-4bf33a5e6082)
+
+**NGSPICE Output (screenshot):**  
+![Screenshot 2025-02-03 175020](https://github.com/user-attachments/assets/4a226d4c-67fd-4ddb-8472-cfe7494b4f06)
+
+Fall Transition time = Time at 20% - Time at 80%  
+Fall Transition time = 4.09528e-9 s - 4.05309e-9 s  
+
+**Fall time = 42.19 ps**
+
+
       
 # Day 4: Pre-Layout Timing Analysis and the Importance of a Good Clock Tree
 
